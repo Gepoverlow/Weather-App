@@ -8,12 +8,20 @@
   </head>
   <link rel="stylesheet" href="style.css" />
   <body>
-    <h1>WEATHER APP</h1>
-    <h2 id="country">Country</h2>
-    <p id="weather">weather</p>
-    <p id="temperature">temperature</p>
-    <label for="search-bar"></label><input type="text" id="search-bar" />
-    <button id="search-button">Search</button>
+    <div id="container-all">
+      <div id="container-header">
+        <h1>WEATHER APP</h1>
+        <div id="form">
+          <label for="search-bar"></label><input type="text" id="search-bar" />
+          <button id="search-button">Search</button>
+        </div>
+      </div>
+      <div id="container-body">
+        <h2 id="country">Country</h2>
+        <p id="weather">weather</p>
+        <p id="temperature">temperature</p>
+      </div>
+    </div>
   </body>
   <script src="app.js"></script>
 </html>

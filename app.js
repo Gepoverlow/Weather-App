@@ -4,7 +4,8 @@ const temperature = document.getElementById("temperature");
 const searchBar = document.getElementById("search-bar");
 const searchButton = document.getElementById("search-button");
 
-let url;
+let url =
+  "https://api.openweathermap.org/data/2.5/weather?q=antwerp&units=metric&APPID=6c679bb6ad2f56b93b4591bc560920e8";
 
 async function getWeather() {
   try {
@@ -21,10 +22,12 @@ async function getWeather() {
   }
 }
 
+window.addEventListener("load", () => {
+  getWeather();
+});
+
 searchButton.addEventListener("click", () => {
   url = `https://api.openweathermap.org/data/2.5/weather?q=${searchBar.value}&units=metric&APPID=6c679bb6ad2f56b93b4591bc560920e8`;
 
   getWeather();
 });
-
-function degreeConverter() {}
