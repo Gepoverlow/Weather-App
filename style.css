@@ -5,7 +5,7 @@
 
 body,
 html {
-  background-color: rgb(224, 110, 110);
+  background-color: rgb(12, 11, 11);
   height: 100%;
 }
 
@@ -23,12 +23,22 @@ p {
   height: 100%;
 }
 
+h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+h2,
+p {
+  color: rgb(180, 174, 174);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
 #container-header {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  background-color: chocolate;
+  background-color: rgb(148, 131, 131);
   width: 100%;
   padding: 10px;
 }

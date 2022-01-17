@@ -4,6 +4,7 @@ const weather = (() => {
       cityName: data.name,
       temperature: data.main.temp,
       weather: data.weather[0].main,
+      country: data.sys.country,
     };
     return specificObject;
   }
@@ -29,7 +30,9 @@ async function displayWeather(input) {
   try {
     const cityData = await weather.getData(input);
 
-    document.getElementById("country").textContent = cityData.cityName;
+    document.getElementById(
+      "country"
+    ).textContent = `${cityData.cityName}, ${cityData.country}`;
     document.getElementById("weather").textContent = cityData.weather;
     document.getElementById(
       "temperature"
