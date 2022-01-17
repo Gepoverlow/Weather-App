@@ -30,9 +30,21 @@ const weather = (() => {
   return { getData };
 })();
 
-async function test() {
-  const foo = await weather.getData("madrid");
-  console.log(foo);
+async function displayWeather(input) {
+  try {
+    const cityData = await weather.getData(input);
+
+    country.textContent = cityData.cityName;
+    weatherI.textContent = cityData.weather;
+    temperature.textContent = `${cityData.temperature} Cº`;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-test();
+searchButton.addEventListener("click", () => {
+  const inputValue = document.getElementById("search-bar").value;
+  if (inputValue.length !== 0) {
+    displayWeather(inputValue);
+  } else return;
+});
