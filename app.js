@@ -1,33 +1,38 @@
 const country = document.getElementById("country");
-const weather = document.getElementById("weather");
+const weatherI = document.getElementById("weather");
 const temperature = document.getElementById("temperature");
-const searchBar = document.getElementById("search-bar");
 const searchButton = document.getElementById("search-button");
 
-let url =
-  "https://api.openweathermap.org/data/2.5/weather?q=antwerp&units=metric&APPID=6c679bb6ad2f56b93b4591bc560920e8";
-
-async function getWeather() {
-  try {
-    const response = await fetch(url, { mode: "cors" });
-    const weatherData = await response.json();
-
-    country.textContent = weatherData.name;
-    weather.textContent = weatherData.weather[0].main;
-    temperature.textContent = `${weatherData.main.temp} Cº`;
-    console.log(weatherData);
-  } catch (error) {
-    country.textContent = "Country not found";
-    console.log(error);
+const weather = (() => {
+  function convertData(data) {
+    const specificObject = {
+      cityName: data.name,
+      temperature: data.main.temp,
+      weather: data.weather[0].main,
+    };
+    return specificObject;
   }
+
+  async function getData(city) {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=28fe7b5f9a78838c639143fc517e4343`;
+    try {
+      const response = await fetch(url, { mode: "cors" });
+      if (!response.ok) throw new Error(`City ${city} not found`);
+
+      const data = convertData(await response.json());
+
+      return data;
+    } catch (error) {
+      alert(error);
+      return null;
+    }
+  }
+  return { getData };
+})();
+
+async function test() {
+  const foo = await weather.getData("madrid");
+  console.log(foo);
 }
 
-window.addEventListener("load", () => {
-  getWeather();
-});
-
-searchButton.addEventListener("click", () => {
-  url = `https://api.openweathermap.org/data/2.5/weather?q=${searchBar.value}&units=metric&APPID=6c679bb6ad2f56b93b4591bc560920e8`;
-
-  getWeather();
-});
+test();
