@@ -1,8 +1,3 @@
-const country = document.getElementById("country");
-const weatherI = document.getElementById("weather");
-const temperature = document.getElementById("temperature");
-const searchButton = document.getElementById("search-button");
-
 const weather = (() => {
   function convertData(data) {
     const specificObject = {
@@ -34,16 +29,19 @@ async function displayWeather(input) {
   try {
     const cityData = await weather.getData(input);
 
-    country.textContent = cityData.cityName;
-    weatherI.textContent = cityData.weather;
-    temperature.textContent = `${cityData.temperature} Cº`;
+    document.getElementById("country").textContent = cityData.cityName;
+    document.getElementById("weather").textContent = cityData.weather;
+    document.getElementById(
+      "temperature"
+    ).textContent = `${cityData.temperature} Cº`;
   } catch (error) {
     console.log(error);
   }
 }
 
-searchButton.addEventListener("click", () => {
+document.getElementById("search-button").addEventListener("click", () => {
   const inputValue = document.getElementById("search-bar").value;
+
   if (inputValue.length !== 0) {
     displayWeather(inputValue);
   } else return;
