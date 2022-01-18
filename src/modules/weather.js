@@ -26,26 +26,4 @@ const weather = (() => {
   return { getData };
 })();
 
-async function displayWeather(input) {
-  try {
-    const cityData = await weather.getData(input);
-
-    document.getElementById(
-      "country"
-    ).textContent = `${cityData.cityName}, ${cityData.country}`;
-    document.getElementById("weather").textContent = cityData.weather;
-    document.getElementById(
-      "temperature"
-    ).textContent = `${cityData.temperature} Cº`;
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-document.getElementById("search-button").addEventListener("click", () => {
-  const inputValue = document.getElementById("search-bar").value;
-
-  if (inputValue.length !== 0) {
-    displayWeather(inputValue);
-  } else return;
-});
+export default weather;

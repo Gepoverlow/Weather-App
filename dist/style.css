@@ -5,7 +5,7 @@
 
 body,
 html {
-  background-color: rgb(12, 11, 11);
+  /* background-color: rgb(12, 11, 11); */
   height: 100%;
 }
 
@@ -49,4 +49,6 @@ p {
   justify-content: space-around;
   align-items: center;
   height: 100%;
+  /* background-image: url("../src/assets/imgs/sunny.jpg"); */
+  background-size: cover;
 }
