@@ -8,10 +8,36 @@ async function displayWeather(input) {
     document.getElementById(
       "country"
     ).textContent = `${cityData.cityName}, ${cityData.country}`;
+
+    //
+
     document.getElementById("weather").textContent = cityData.weather;
+
+    //
+
     document.getElementById(
       "temperature"
-    ).textContent = `${cityData.temperature} Cº`;
+    ).textContent = `${cityData.temperature.temp} º`;
+
+    //
+
+    document.getElementById(
+      "feels-like"
+    ).textContent = `Feels like ${cityData.feelsLike}º`;
+
+    //
+
+    document.getElementById(
+      "max-min"
+    ).textContent = `Max: ${cityData.temperature.max}º - Min: ${cityData.temperature.min}ª`;
+
+    //
+
+    document.getElementById(
+      "humidity"
+    ).textContent = `Humidity ${cityData.humidity}%`;
+
+    //
 
     displayWeatherBG(
       cityData.weather,

@@ -2,7 +2,13 @@ const weather = (() => {
   function convertData(data) {
     const specificObject = {
       cityName: data.name,
-      temperature: data.main.temp,
+      temperature: {
+        temp: data.main.temp,
+        max: data.main.temp_max,
+        min: data.main.temp_min,
+      },
+      feelsLike: data.main.feels_like,
+      humidity: data.main.humidity,
       weather: data.weather[0].main,
       country: data.sys.country,
     };
@@ -16,6 +22,8 @@ const weather = (() => {
       if (!response.ok) throw new Error(`City ${city} not found`);
 
       const data = convertData(await response.json());
+
+      console.log(data);
 
       return data;
     } catch (error) {
