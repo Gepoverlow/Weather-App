@@ -15,7 +15,7 @@ async function displayWeather(input) {
 
     displayWeatherBG(
       cityData.weather,
-      document.getElementById("container-body")
+      document.getElementsByTagName("BODY")[0]
     );
   } catch (error) {
     console.log(error);
