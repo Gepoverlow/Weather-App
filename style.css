@@ -10,6 +10,7 @@ html {
 }
 
 body {
+  background-image: url("../src/assets/imgs/main.jpg");
   background-size: cover;
 }
 
@@ -17,17 +18,24 @@ h2 {
   font-size: 10vh;
 }
 
-p {
+h3 {
   font-size: 7vh;
+}
+
+p {
+  font-size: 2vh;
 }
 
 h1 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: beige;
 }
 
 h2,
+h3,
 p {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: beige;
 }
 
 #container-all {
@@ -53,4 +61,17 @@ p {
   align-items: center;
   height: 100%;
   /* background-image: url("../src/assets/imgs/sunny.jpg"); */
+}
+
+#weather-info {
+  padding: 50px;
+  background-color: rgba(33, 39, 36, 0.8);
+  border-radius: 20px;
+}
+
+#details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 60vh;
 }
