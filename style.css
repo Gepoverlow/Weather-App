@@ -9,6 +9,10 @@ html {
   height: 100%;
 }
 
+body {
+  background-size: cover;
+}
+
 h2 {
   font-size: 10vh;
 }
@@ -17,20 +21,19 @@ p {
   font-size: 7vh;
 }
 
-#container-all {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
 h1 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 h2,
 p {
-  color: rgb(180, 174, 174);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+#container-all {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 #container-header {
@@ -38,7 +41,7 @@ p {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  background-color: rgb(148, 131, 131);
+  background-color: rgba(0, 0, 255, 0);
   width: 100%;
   padding: 10px;
 }
@@ -50,5 +53,4 @@ p {
   align-items: center;
   height: 100%;
   /* background-image: url("../src/assets/imgs/sunny.jpg"); */
-  background-size: cover;
 }
