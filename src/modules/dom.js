@@ -7,7 +7,9 @@ import drizzle from "../assets/imgs/drizzle.jpg";
 import Thunderstorm from "../assets/imgs/thunderstorm.jpg";
 
 function displayWeatherBG(weather, backgroundDOM) {
-  backgroundDOM.style.opacity = 1;
+  backgroundDOM.style.opacity = 0;
+
+  setTimeout(() => (backgroundDOM.style.opacity = 1), 50);
 
   if (
     weather === "Mist" ||

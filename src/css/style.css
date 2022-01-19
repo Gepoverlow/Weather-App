@@ -13,7 +13,7 @@ html {
 body {
   background: url("../assets/imgs/main.jpg");
   background-size: cover;
-  animation: fadeIn 1s;
+  transition: opacity 2s ease-in;
 }
 
 html {
