@@ -4,13 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+
     <title>Weather App</title>
+    <link rel="stylesheet" href="../src/css/style.css" />
+    <link rel="stylesheet" href="../src/css/loader.css" />
   </head>
-  <link rel="stylesheet" href="style.css" />
   <body>
     <div id="container-all">
       <div id="container-header">
-        <h1>WEATHER APP</h1>
+        <div id="logo">
+          <h1>WEATHER APP</h1>
+          <i class="material-icons">cloud</i>
+        </div>
         <div id="form-div">
           <label for="search-bar"></label><input type="text" id="search-bar" />
           <button id="search-button">Search</button>
@@ -26,6 +35,10 @@
             <p id="max-min"></p>
             <p id="humidity"></p>
           </div>
+        </div>
+        <div class="loader">
+          <div class="circle"></div>
+          <div class="circle"></div>
         </div>
       </div>
     </div>
