@@ -48,10 +48,28 @@ async function displayWeather(input) {
   }
 }
 
+function initSearch() {
+  const loader = document.querySelector(".loader");
+  const weatherInfo = document.getElementById("weather-info");
+
+  loader.style.display = "inline-block";
+
+  weatherInfo.style.opacity = 0;
+  weatherInfo.style.display = "none";
+
+  setTimeout(() => {
+    loader.style.display = "none";
+
+    weatherInfo.style.display = "block";
+    setTimeout(() => (weatherInfo.style.opacity = 1), 50);
+  }, 3000);
+}
+
 document.getElementById("search-button").addEventListener("click", () => {
   const inputValue = document.getElementById("search-bar").value;
 
   if (inputValue.length !== 0) {
+    initSearch();
     displayWeather(inputValue);
   } else return;
 });

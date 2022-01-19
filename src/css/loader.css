@@ -1,4 +1,5 @@
 .loader {
+  display: none;
   height: 50px;
   transform-origin: bottom center;
   animation: rotate 3s linear infinite;
