@@ -7,6 +7,8 @@ import drizzle from "../assets/imgs/drizzle.jpg";
 import Thunderstorm from "../assets/imgs/thunderstorm.jpg";
 
 function displayWeatherBG(weather, backgroundDOM) {
+  backgroundDOM.style.opacity = 1;
+
   if (
     weather === "Mist" ||
     weather === "Smoke" ||
