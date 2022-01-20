@@ -2,6 +2,13 @@ import weather from "./modules/weather.js";
 import displayWeatherBG from "./modules/dom.js";
 import "./css/style.css";
 import "./css/loader.css";
+import mainImage from "../src/assets/imgs/main.jpg";
+
+const body = document.getElementsByTagName("BODY")[0];
+
+window.addEventListener("load", () => {
+  body.style.backgroundImage = `url(${mainImage})`;
+});
 
 async function displayWeather(input) {
   try {
@@ -21,10 +28,7 @@ async function displayWeather(input) {
     maxMinDOM.textContent = `Max: ${cityData.temperature.max}º - Min: ${cityData.temperature.min}ª`;
     humidityDOM.textContent = `Humidity ${cityData.humidity}%`;
 
-    displayWeatherBG(
-      cityData.weather,
-      document.getElementsByTagName("BODY")[0]
-    );
+    displayWeatherBG(cityData.weather, body);
   } catch (error) {
     console.log(error);
   }
