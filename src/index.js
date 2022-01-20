@@ -1,5 +1,7 @@
 import weather from "./modules/weather.js";
 import displayWeatherBG from "./modules/dom.js";
+import "./css/style.css";
+import "./css/loader.css";
 
 async function displayWeather(input) {
   try {
