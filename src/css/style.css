@@ -99,6 +99,35 @@ p {
   justify-content: center;
 }
 
+#form-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#search-button {
+  top: 27%;
+  left: 6%;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: rgb(209, 186, 186);
+}
+
+input[type="text"] {
+  width: 24rem;
+  /* height: 100%; */
+  border: rgb(219, 195, 195);
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0 0 0.3rem 4.5rem;
+
+  color: #e7d6d6;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
