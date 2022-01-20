@@ -5,39 +5,19 @@ async function displayWeather(input) {
   try {
     const cityData = await weather.getData(input);
 
-    document.getElementById(
-      "country"
-    ).textContent = `${cityData.cityName}, ${cityData.country}`;
+    const countryDOM = document.getElementById("country");
+    const weatherDOM = document.getElementById("weather");
+    const temperatureDOM = document.getElementById("temperature");
+    const feelsLikeDOM = document.getElementById("feels-like");
+    const maxMinDOM = document.getElementById("max-min");
+    const humidityDOM = document.getElementById("humidity");
 
-    //
-
-    document.getElementById("weather").textContent = cityData.weather;
-
-    //
-
-    document.getElementById(
-      "temperature"
-    ).textContent = `${cityData.temperature.temp} º`;
-
-    //
-
-    document.getElementById(
-      "feels-like"
-    ).textContent = `Feels like ${cityData.feelsLike}º`;
-
-    //
-
-    document.getElementById(
-      "max-min"
-    ).textContent = `Max: ${cityData.temperature.max}º - Min: ${cityData.temperature.min}ª`;
-
-    //
-
-    document.getElementById(
-      "humidity"
-    ).textContent = `Humidity ${cityData.humidity}%`;
-
-    //
+    countryDOM.textContent = `${cityData.cityName}, ${cityData.country}`;
+    weatherDOM.textContent = cityData.weather;
+    temperatureDOM.textContent = `${cityData.temperature.temp} º`;
+    feelsLikeDOM.textContent = `Feels like ${cityData.feelsLike}º`;
+    maxMinDOM.textContent = `Max: ${cityData.temperature.max}º - Min: ${cityData.temperature.min}ª`;
+    humidityDOM.textContent = `Humidity ${cityData.humidity}%`;
 
     displayWeatherBG(
       cityData.weather,
@@ -59,6 +39,8 @@ function initSearch() {
     weatherInfo.style.opacity = 0;
     weatherInfo.style.display = "none";
 
+    displayWeather(inputValue);
+
     setTimeout(() => {
       loader.style.display = "none";
 
@@ -66,8 +48,6 @@ function initSearch() {
       setTimeout(() => (weatherInfo.style.opacity = 1), 50);
 
       //
-
-      displayWeather(inputValue);
 
       //
     }, 3000);
