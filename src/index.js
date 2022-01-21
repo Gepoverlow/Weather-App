@@ -6,9 +6,9 @@ import mainImage from "../src/assets/imgs/main.jpg";
 
 const body = document.getElementsByTagName("BODY")[0];
 
-window.addEventListener("load", () => {
-  body.style.backgroundImage = `url(${mainImage})`;
-});
+// window.addEventListener("load", () => {
+//   body.style.backgroundImage = `url(${mainImage})`;
+// });
 
 async function displayWeather(input) {
   try {
